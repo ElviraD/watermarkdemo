@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import DomWater from "./DomWater";
+import CanvasWater from "./CanvasWater";
+import SvgWater from "./SvgWater";
+import PicWater from "./PicWater"
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* 1. dom元素覆盖 */}
+      {/* <DomWater /> */}
+
+      {/* 2. canvas */}
+      <CanvasWater />
+
+      {/* 3. svg */}
+      {/* <SvgWater /> */}
+
+      {/* 4. 图片 */}
+      {/* <PicWater /> */}
     </div>
   );
 }

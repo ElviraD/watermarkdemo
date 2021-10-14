@@ -1,6 +1,12 @@
 .App {
   text-align: center;
+  margin: 20px 0;
 }
+
+
+.watermark { 
+  text-align: center; 
+} 
 
 .App-logo {
   height: 40vmin;
