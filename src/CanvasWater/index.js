@@ -55,7 +55,7 @@ export default class CanvasWater extends React.Component {
     const box = document.querySelector("#canvas-watermark-box");
     const watermarkBox = box || document.createElement("div");
     const styleStr = `
-                  position:fixed;
+                  position:absolute;
                   top:${wrap.offsetTop}px;
                   left:0;
                   bottom:0;
@@ -75,14 +75,17 @@ export default class CanvasWater extends React.Component {
   }
 
   componentDidMount() {
+    const setting = {
+      content: "canvas水印",
+    };
     window.onload = () => {
-      const setting = {
-        content: "canvas水印",
-      };
       this.createObserver("canvas-watermark-box", setting);
-
       this.canvasWater(setting);
     };
+    window.onresize = () => {
+      this.createObserver("canvas-watermark-box", setting);
+      this.canvasWater(setting);
+    }
   }
 
   render() {
@@ -92,6 +95,7 @@ export default class CanvasWater extends React.Component {
         <img
           className="image canvas-image"
           src="https://img.ljcdn.com/beike/ajax/m/1631708906673.jpeg"
+          onContextMenu={() => {return false}}
         />
         <div id="canvas-watermark-box"></div>
       </div>

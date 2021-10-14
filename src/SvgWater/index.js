@@ -36,7 +36,7 @@ export default class SvgWater extends React.Component {
 
     const watermarkBox = box || document.createElement("div");
     const styleStr = `
-                  position:fixed;
+                  position:absolute;
                   top:${wrap.offsetTop}px;
                   left:0;
                   bottom:0;
